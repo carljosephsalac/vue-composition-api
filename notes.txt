@@ -4,3 +4,7 @@ Project Structure:
 - id="app", wrapper of the vue or considered as root
 - src folder, brain of the vue application
 - App.vue, root component
+
+Reactivity:
+- import { ref and reactive } // for reactivity
+  
