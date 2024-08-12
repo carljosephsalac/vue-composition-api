@@ -5,16 +5,24 @@ const count = ref(0)
 const state = reactive({
   count: 0
 })
+const myClass = 'mb-5 block text-green'
 </script>
 
 <template>
-  <button @click="count++">ref {{ count }}</button>
-  <button @click="state.count++">reactive {{ state.count }}</button>
+  <button @click="count++" :class="myClass">ref {{ count }}</button>
+  <button @click="state.count++" :class="true && myClass">reactive {{ state.count }}</button>
 </template>
 
 <style>
-button {
+.block {
   display: block;
+}
+
+.mb-5 {
   margin-bottom: 5px;
+}
+
+.text-green {
+  color: green;
 }
 </style>
