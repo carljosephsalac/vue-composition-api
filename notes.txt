@@ -1,0 +1,6 @@
+DAY 1
+Project Structure:
+- index.html, root where the browser going to read
+- id="app", wrapper of the vue or considered as root
+- src folder, brain of the vue application
+- App.vue, root component
