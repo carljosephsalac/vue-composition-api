@@ -1,4 +1,5 @@
 <script setup>
+import MyWrapper from '@/components/MyWrapper.vue'
 import PostItem from '@/components/PostItem.vue'
 
 const posts = [
@@ -47,8 +48,11 @@ const posts = [
 
 <template>
   <div v-for="post in posts" :key="post.id">
-    <div class="flex justify-center w-full">
+    <MyWrapper>
+      <template #badge>
+        <div class="mt-3 badge badge-outline">Named Slots</div>
+      </template>
       <PostItem :post="post" />
-    </div>
+    </MyWrapper>
   </div>
 </template>
