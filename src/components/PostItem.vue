@@ -9,7 +9,7 @@ defineProps({
 
 <template>
   <div class="flex flex-col shadow-xl w-[600px] rounded-xl bg-base-300 my-3">
-    <div class="flex justify-between p-5 bg-zinc-950 rounded-t-xl">
+    <div class="flex items-center justify-between px-5 py-3 bg-zinc-950 rounded-t-xl">
       <p>Written by {{ post.author }} on {{ post.created_at }}</p>
       <div>
         <button class="btn btn-error btn-sm me-2">Delete</button>

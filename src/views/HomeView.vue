@@ -50,7 +50,8 @@ const posts = [
   <div v-for="post in posts" :key="post.id">
     <MyWrapper>
       <template #badge>
-        <div class="mt-3 badge badge-outline">Named Slots</div>
+        <!-- named slot -->
+        <div class="mt-3 badge badge-outline">{{ post.id }}</div>
       </template>
       <PostItem :post="post" />
     </MyWrapper>

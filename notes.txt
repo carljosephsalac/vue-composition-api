@@ -29,3 +29,18 @@ Vue Router:
     },
 - in App.vue use <RouterLink to="/posts/create">Create Post</RouterLink> to create a link
 - <RouterView /> , renders the component from views folder
+
+V-MODEL:
+- v-model , two way binding
+- to make the variable reactive
+    import { reactive } from 'vue'
+    const post = reactive({
+        title: '',
+        body: ''
+    })
+- computed (returns something) in options api
+    import { reactive, computed } from 'vue'
+    const isFormInvalid = computed(() => {
+        return post.title === '' || post.body === ''
+    })
+    <button :disabled="isFormInvalid" class="mt-1 btn btn-neutral">Add</button>
