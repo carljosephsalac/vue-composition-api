@@ -11,3 +11,9 @@ Reactivity:
 DAY 2
 V-FOR:
 - always put unique key when using v-for :key="post.id"
+
+Single File Component:
+- import PostItem from '@/components/PostItem.vue' 
+- defineProps(), like @props() in blade
+- <PostItem :post="post" /> , to pass the data from parent component to child
+- <script setup> , for simplicity

@@ -1,4 +1,6 @@
 <script setup>
+import PostItem from '@/components/PostItem.vue'
+
 const posts = [
   {
     id: 1,
@@ -44,19 +46,9 @@ const posts = [
 </script>
 
 <template>
-  <div v-for="post in posts" :key="post.id" class="flex justify-center w-full">
-    <div class="flex flex-col shadow-xl w-[600px] rounded-xl bg-base-300 my-3">
-      <div class="flex justify-between p-5 bg-zinc-950 rounded-t-xl">
-        <p>Written by {{ post.author }} on {{ post.created_at }}</p>
-        <div>
-          <button class="btn btn-error btn-sm me-2">Delete</button>
-          <button class="btn btn-success btn-sm">Save</button>
-        </div>
-      </div>
-      <div class="p-5 space-y-5">
-        <h1 class="text-3xl font-bold">{{ post.title }}</h1>
-        <p>{{ post.body }}</p>
-      </div>
+  <div v-for="post in posts" :key="post.id">
+    <div class="flex justify-center w-full">
+      <PostItem :post="post" />
     </div>
   </div>
 </template>
