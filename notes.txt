@@ -17,3 +17,15 @@ Single File Component:
 - defineProps(), like @props() in blade
 - <PostItem :post="post" /> , to pass the data from parent component to child
 - <script setup> , for simplicity
+
+Vue Router:
+- in router/index.js directory import the view component from views folder
+    import PostCreate from '@/views/PostCreate.vue'
+- set up the route
+    {
+      path: '/posts/create',
+      name: 'posts.create',
+      component: PostCreate
+    },
+- in App.vue use <RouterLink to="/posts/create">Create Post</RouterLink> to create a link
+- <RouterView /> , renders the component from views folder
