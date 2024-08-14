@@ -3,7 +3,7 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header class="navbar bg-neutral text-neutral-content">
+  <header class="navbar bg-zinc-950 text-neutral-content">
     <div class="flex-1">
       <RouterLink to="/" class="text-xl btn btn-ghost">daisyUI</RouterLink>
     </div>
