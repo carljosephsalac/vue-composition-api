@@ -5,10 +5,11 @@ defineProps({
     required: true
   }
 })
-const emit = defineEmits(['get-id'])
-const getId = (id) => {
-  emit('get-id', id)
-}
+/* Emit */
+// const emit = defineEmits(['get-id'])
+// const getId = (id) => {
+//   emit('get-id', id)
+// }
 </script>
 
 <template>
@@ -16,8 +17,8 @@ const getId = (id) => {
     <div class="flex items-center justify-between px-5 py-3 bg-zinc-950 rounded-t-xl">
       <p>Written by {{ post.author }} on {{ post.created_at }}</p>
       <div>
-        <button @click="getId(post.id)" class="btn btn-sm me-3">Get ID</button>
-        <button class="btn btn-circle btn-error me-3 btn-sm">
+        <!-- <button @click="getId(post.id)" class="btn btn-sm me-3">Get ID</button> // Emit -->
+        <button class="btn btn-circle btn-outline btn-error me-3 btn-sm">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"

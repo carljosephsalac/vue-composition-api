@@ -52,3 +52,7 @@ Emit events:
 - emit , custom event listener
 - from child to parent component communication
 - defineEmits([]) , takes an array of custom emits or events
+
+Pinia (State Management):
+- stores folder
+- separate the data and logic
