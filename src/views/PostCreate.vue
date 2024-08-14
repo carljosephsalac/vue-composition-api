@@ -1,18 +1,26 @@
 <script setup>
-import MyWrapper from '@/components/MyWrapper.vue'
 import { reactive, computed } from 'vue'
+import { useRouter } from 'vue-router'
+import MyWrapper from '@/components/MyWrapper.vue'
+import { usePostsStore } from '@/stores/posts'
 
 const post = reactive({
   title: '',
   body: ''
 })
+
+const router = useRouter()
+
 const isFormInvalid = computed(() => {
   return post.title === '' || post.body === ''
 })
-const logPost = () => {
-  console.log(post.title, post.body)
-  post.title = ''
-  post.body = ''
+
+const postStore = usePostsStore()
+
+const submit = () => {
+  // usePostsStore().addPosts(post)
+  postStore.addPosts(post)
+  router.push({ name: 'home' })
 }
 </script>
 
@@ -22,7 +30,7 @@ const logPost = () => {
       <div class="flex items-center px-5 py-3 bg-zinc-950 rounded-t-xl">
         <p>Create New Post</p>
       </div>
-      <form @submit.prevent="logPost">
+      <form @submit.prevent="submit">
         <div class="flex flex-col gap-5 px-10 pt-3 pb-6">
           <label class="w-full form-control">
             <div class="label">

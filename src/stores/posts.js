@@ -51,5 +51,18 @@ export const usePostsStore = defineStore('posts-store', {
         }
       ]
     }
+  },
+  // Method
+  actions: {
+    addPosts(post) {
+      this.posts.push({
+        id: this.posts.length + 1,
+        title: post.title,
+        body: post.body,
+        author: 'Carl Joseph Salac',
+        created_at: new Date().toLocaleDateString(),
+        is_saved: false
+      })
+    }
   }
 })

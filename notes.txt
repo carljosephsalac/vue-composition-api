@@ -56,3 +56,18 @@ Emit events:
 Pinia (State Management):
 - stores folder
 - separate the data and logic
+
+Pinia Actions (Create):
+- in stores/posts create an action 
+- in PostCreate view , 
+    import { usePostsStore } from '@/stores/posts'
+    import { useRouter } from 'vue-router'
+
+    const router = useRouter()
+    const postStore = usePostsStore()
+
+    const submit = () => {
+        // usePostsStore().addPosts(post)
+        postStore.addPosts(post)
+        router.push({ name: 'home' })
+    }
