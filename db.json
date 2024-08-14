@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Introduction to JavaScript",
+      "body": "JavaScript is a versatile programming language used in web development.",
+      "author": "John Doe",
+      "created_at": "08/13/2024",
+      "is_saved": true
+    },
+    {
+      "id": "2",
+      "title": "Understanding CSS Grid",
+      "body": "CSS Grid is a powerful layout system in CSS.",
+      "author": "Jane Smith",
+      "created_at": "08/13/2024",
+      "is_saved": false
+    },
+    {
+      "id": "3",
+      "title": "Getting Started with Laravel",
+      "body": "Laravel is a PHP framework that makes web development easier.",
+      "author": "Chris Johnson",
+      "created_at": "08/13/2024",
+      "is_saved": false
+    },
+    {
+      "id": "4",
+      "title": "A Guide to REST APIs",
+      "body": "REST APIs allow communication between client and server over HTTP.",
+      "author": "Emily Davis",
+      "created_at": "08/13/2024",
+      "is_saved": false
+    },
+    {
+      "id": "5",
+      "title": "Nisi in nihil culpa",
+      "body": "Eaque esse est est",
+      "author": "Carl Joseph Salac",
+      "created_at": "8/14/2024",
+      "is_saved": false
+    }
+  ]
+}

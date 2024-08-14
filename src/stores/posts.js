@@ -8,48 +8,9 @@ export const usePostsStore = defineStore('posts-store', {
   // Data
   state() {
     return {
-      posts: [
-        {
-          id: 1,
-          title: 'Introduction to JavaScript',
-          body: 'JavaScript is a versatile programming language used in web development.',
-          author: 'John Doe',
-          created_at: '08/13/2024',
-          is_saved: false
-        },
-        {
-          id: 2,
-          title: 'Understanding CSS Grid',
-          body: 'CSS Grid is a powerful layout system in CSS.',
-          author: 'Jane Smith',
-          created_at: '08/13/2024',
-          is_saved: false
-        },
-        {
-          id: 3,
-          title: 'Getting Started with Laravel',
-          body: 'Laravel is a PHP framework that makes web development easier.',
-          author: 'Chris Johnson',
-          created_at: '08/13/2024',
-          is_saved: false
-        },
-        {
-          id: 4,
-          title: 'A Guide to REST APIs',
-          body: 'REST APIs allow communication between client and server over HTTP.',
-          author: 'Emily Davis',
-          created_at: '08/13/2024',
-          is_saved: false
-        },
-        {
-          id: 5,
-          title: 'Exploring Vue.js',
-          body: 'Vue.js is a progressive JavaScript framework for building user interfaces.',
-          author: 'Michael Brown',
-          created_at: '08/13/2024',
-          is_saved: false
-        }
-      ]
+      posts: [],
+      loading: true,
+      errMsg: ''
     }
   },
   // Computed
@@ -64,22 +25,52 @@ export const usePostsStore = defineStore('posts-store', {
   },
   // Method
   actions: {
+    getPost() {
+      fetch('http://localhost:3000/posts')
+        .then((res) => res.json())
+        .then((data) => {
+          this.posts = data
+          this.loading = false
+        })
+        .catch((err) => {
+          this.errMsg = 'Something went wrong'
+          console.log(err)
+        })
+    },
     addPosts(post) {
-      this.posts.push({
-        id: this.posts.length + 1,
+      const newPost = {
+        id: String(this.posts.length + 1),
         title: post.title,
         body: post.body,
         author: 'Carl Joseph Salac',
         created_at: new Date().toLocaleDateString(),
         is_saved: false
-      })
+      }
+
+      this.posts.push(newPost)
+
+      fetch('http://localhost:3000/posts', {
+        method: 'POST',
+        headers: { 'Content-type': 'application/json' },
+        body: JSON.stringify(newPost)
+      }).catch((err) => console.log(err))
     },
     deletePost(id) {
       this.posts = this.posts.filter((post) => post.id !== id)
+
+      fetch(`http://localhost:3000/posts/${id}`, {
+        method: 'DELETE'
+      }).catch((err) => console.log(err))
     },
     savePost(id) {
       const post = this.posts.find((p) => p.id === id)
       post.is_saved = !post.is_saved
+
+      fetch(`http://localhost:3000/posts/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-type': 'application/json' },
+        body: JSON.stringify({ is_saved: post.is_saved })
+      }).catch((err) => console.log(err))
     }
   }
 })

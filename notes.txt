@@ -74,3 +74,15 @@ Pinia Actions (Create):
 
 Pinia Getters:
 - getters: same as computed
+
+Using JSON-Server to save the state:
+- npm intall json-server
+- create db.json in root directory
+- move the post (array of objects) to db.json
+- to run json server run this command , npx json-server db.json -w
+- fetch the data
+    getPost() {
+      fetch('http://localhost:3000/posts')
+        .then((res) => res.json())
+        .then((data) => (this.posts = data))
+    },

@@ -1,19 +1,27 @@
 <script setup>
+import { computed } from 'vue'
 import { usePostsStore } from '@/stores/posts'
 
 const postStore = usePostsStore()
 
-defineProps({
+const props = defineProps({
   post: {
     type: Object,
     required: true
   }
 })
+
 /* Emit */
 // const emit = defineEmits(['get-id'])
 // const getId = (id) => {
 //   emit('get-id', id)
 // }
+
+const savedBtnClass = computed(() => {
+  return props.post.is_saved
+    ? 'bg-green-500 text-black hover:bg-green-500'
+    : 'text-green-500 bg-transparent hover:bg-transparent'
+})
 </script>
 
 <template>
@@ -41,8 +49,8 @@ defineProps({
         </button>
         <button
           @click="postStore.savePost(post.id)"
-          class="text-green-500 bg-transparent btn btn-circle btn-success btn-sm hover:bg-transparent"
-          :class="post.is_saved ? 'bg-green-500 text-black hover:bg-green-500' : ''"
+          class="btn btn-circle btn-success btn-sm"
+          :class="savedBtnClass"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -65,5 +73,3 @@ defineProps({
     </div>
   </div>
 </template>
-
-<style lang="scss" scoped></style>
