@@ -8,6 +8,7 @@ Project Structure:
 Reactivity:
 - import { ref and reactive } // for reactivity
 
+
 DAY 2
 V-FOR:
 - always put unique key when using v-for :key="post.id"
@@ -44,3 +45,10 @@ V-MODEL:
         return post.title === '' || post.body === ''
     })
     <button :disabled="isFormInvalid" class="mt-1 btn btn-neutral">Add</button>
+
+
+DAY 3
+Emit events:
+- emit , custom event listener
+- from child to parent component communication
+- defineEmits([]) , takes an array of custom emits or events

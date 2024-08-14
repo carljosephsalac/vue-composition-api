@@ -53,7 +53,14 @@ const posts = [
         <!-- named slot -->
         <div class="mt-3 badge badge-outline">{{ post.id }}</div>
       </template>
-      <PostItem :post="post" />
+      <PostItem
+        :post="post"
+        @get-id="
+          (id) => {
+            console.log(id)
+          }
+        "
+      />
     </MyWrapper>
   </div>
 </template>
