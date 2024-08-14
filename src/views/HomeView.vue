@@ -7,7 +7,7 @@ const postStore = usePostsStore()
 </script>
 
 <template>
-  <div v-for="post in postStore.posts" :key="post.id">
+  <div v-for="post in postStore.sorted" :key="post.id">
     <MyWrapper>
       <template #badge>
         <!-- named slot -->

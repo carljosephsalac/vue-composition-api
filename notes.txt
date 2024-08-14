@@ -71,3 +71,6 @@ Pinia Actions (Create):
         postStore.addPosts(post)
         router.push({ name: 'home' })
     }
+
+Pinia Getters:
+- getters: same as computed
