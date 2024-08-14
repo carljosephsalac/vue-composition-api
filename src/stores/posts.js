@@ -69,6 +69,13 @@ export const usePostsStore = defineStore('posts-store', {
         created_at: new Date().toLocaleDateString(),
         is_saved: false
       })
+    },
+    deletePost(id) {
+      this.posts = this.posts.filter((post) => post.id !== id)
+    },
+    savePost(id) {
+      const post = this.posts.find((p) => p.id === id)
+      post.is_saved = !post.is_saved
     }
   }
 })

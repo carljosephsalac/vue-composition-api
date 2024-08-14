@@ -1,4 +1,8 @@
 <script setup>
+import { usePostsStore } from '@/stores/posts'
+
+const postStore = usePostsStore()
+
 defineProps({
   post: {
     type: Object,
@@ -18,7 +22,10 @@ defineProps({
       <p>Written by {{ post.author }} on {{ post.created_at }}</p>
       <div>
         <!-- <button @click="getId(post.id)" class="btn btn-sm me-3">Get ID</button> // Emit -->
-        <button class="btn btn-circle btn-outline btn-error me-3 btn-sm">
+        <button
+          @click="postStore.deletePost(post.id)"
+          class="btn btn-circle btn-outline btn-error me-3 btn-sm"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -32,7 +39,11 @@ defineProps({
             />
           </svg>
         </button>
-        <button class="btn btn-circle btn-outline btn-success btn-sm">
+        <button
+          @click="postStore.savePost(post.id)"
+          class="text-green-500 bg-transparent btn btn-circle btn-success btn-sm hover:bg-transparent"
+          :class="post.is_saved ? 'bg-green-500 text-black hover:bg-green-500' : ''"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
