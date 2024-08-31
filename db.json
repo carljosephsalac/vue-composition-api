@@ -6,7 +6,7 @@
       "body": "JavaScript is a versatile programming language used in web development.",
       "author": "John Doe",
       "created_at": "08/13/2024",
-      "is_saved": true
+      "is_saved": false
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "body": "CSS Grid is a powerful layout system in CSS.",
       "author": "Jane Smith",
       "created_at": "08/13/2024",
-      "is_saved": false
+      "is_saved": true
     },
     {
       "id": "3",
@@ -30,15 +30,15 @@
       "body": "REST APIs allow communication between client and server over HTTP.",
       "author": "Emily Davis",
       "created_at": "08/13/2024",
-      "is_saved": false
+      "is_saved": true
     },
     {
       "id": "5",
-      "title": "Nisi in nihil culpa",
-      "body": "Eaque esse est est",
+      "title": "Quis enim ut et iure",
+      "body": "Aperiam atque quibus",
       "author": "Carl Joseph Salac",
-      "created_at": "8/14/2024",
-      "is_saved": false
+      "created_at": "8/30/2024",
+      "is_saved": true
     }
   ]
 }

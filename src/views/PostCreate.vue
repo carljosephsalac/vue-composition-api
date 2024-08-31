@@ -26,7 +26,7 @@ const submit = () => {
 
 <template>
   <MyWrapper>
-    <div class="flex flex-col shadow-xl w-[600px] rounded-xl bg-base-300 mt-10">
+    <div class="flex flex-col shadow-xl sm:w-[600px] w-full rounded-xl bg-base-300 mt-10">
       <div class="flex items-center px-5 py-3 bg-zinc-950 rounded-t-xl">
         <p>Create New Post</p>
       </div>
@@ -41,7 +41,7 @@ const submit = () => {
               v-model="post.title"
               type="text"
               placeholder="Type here"
-              class="w-full input input-bordered"
+              class="w-full input input-bordered input-sm sm:input-md"
             />
           </label>
           <label class="form-control">
@@ -51,11 +51,13 @@ const submit = () => {
             </div>
             <textarea
               v-model="post.body"
-              class="h-24 textarea textarea-bordered"
+              class="h-24 textarea textarea-bordered textarea-sm sm:textarea-md"
               placeholder="Type here"
             ></textarea>
           </label>
-          <button :disabled="isFormInvalid" class="mt-1 btn btn-neutral">Add</button>
+          <button :disabled="isFormInvalid" class="mt-1 btn btn-neutral btn-sm sm:btn-md">
+            Add
+          </button>
         </div>
       </form>
     </div>

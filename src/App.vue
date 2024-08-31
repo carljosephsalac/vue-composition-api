@@ -16,9 +16,6 @@ postStore.getPost()
         <li>
           <RouterLink to="/posts/create">Create Post</RouterLink>
         </li>
-        <li>
-          <RouterLink to="/posts/edit">Edit Post</RouterLink>
-        </li>
       </ul>
     </nav>
   </header>

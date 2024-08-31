@@ -25,20 +25,20 @@ const savedBtnClass = computed(() => {
 </script>
 
 <template>
-  <div class="flex flex-col shadow-xl w-[600px] rounded-xl bg-base-300 my-3">
+  <div class="flex flex-col shadow-xl w-full sm:w-[600px] rounded-xl bg-base-300 my-3">
     <div class="flex items-center justify-between px-5 py-3 bg-zinc-950 rounded-t-xl">
-      <p>Written by {{ post.author }} on {{ post.created_at }}</p>
+      <p class="text-xs sm:text-base">Written by {{ post.author }} on {{ post.created_at }}</p>
       <div>
         <!-- <button @click="getId(post.id)" class="btn btn-sm me-3">Get ID</button> // Emit -->
         <button
           @click="postStore.deletePost(post.id)"
-          class="btn btn-circle btn-outline btn-error me-3 btn-sm"
+          class="btn btn-circle btn-outline btn-error me-3 btn-xs sm:btn-sm"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            class="size-5"
+            class="sm:size-5 size-4"
           >
             <path
               fill-rule="evenodd"
@@ -49,14 +49,14 @@ const savedBtnClass = computed(() => {
         </button>
         <button
           @click="postStore.savePost(post.id)"
-          class="btn btn-circle btn-success btn-sm"
+          class="btn btn-circle btn-success btn-xs sm:btn-sm"
           :class="savedBtnClass"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            class="size-5"
+            class="sm:size-5 size-4"
           >
             <path
               fill-rule="evenodd"
@@ -68,8 +68,8 @@ const savedBtnClass = computed(() => {
       </div>
     </div>
     <div class="p-5 space-y-5">
-      <h1 class="text-3xl font-bold">{{ post.title }}</h1>
-      <p>{{ post.body }}</p>
+      <h1 class="text-xl font-bold sm:text-3xl">{{ post.title }}</h1>
+      <p class="text-xs sm:text-base">{{ post.body }}</p>
     </div>
   </div>
 </template>
